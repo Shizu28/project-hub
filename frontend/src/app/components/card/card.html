@@ -1,0 +1,19 @@
+<div class="border-2 rounded-lg w-72 min-h-50 flex flex-col gap-2 shadow-lg shadow-gray-400">
+  <p class="p-1 m-2 text-lg">{{ title() }}</p>
+  <p class="p-1 m-2 -mt-4! text-xs text-gray-500">{{ subtitle() }}</p>
+  <div class="flex flex-1 text-base items-center justify-start py-4 px-2 whitespace-break-spaces">
+    {{ content() }}
+  </div>
+  <div class="flex flex-row justify-between items-center">
+    <app-secondary-button
+      (clicked)="clicked.emit()"
+      [label]="secondaryButtonLabel()"
+      class="flex justify-end"
+    ></app-secondary-button>
+    <app-primary-button
+      (clicked)="clicked.emit()"
+      [label]="primaryButtonLabel()"
+      class="flex justify-end"
+    ></app-primary-button>
+  </div>
+</div>

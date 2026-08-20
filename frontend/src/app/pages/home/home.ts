@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavBar } from '../../components/nav-bar/nav-bar';
+import { NavBar } from '../../components/generic-components/nav-bar/nav-bar';
 
 @Component({
   selector: 'app-home',
-  imports: [NavBar],
+  imports: [],
   host: { class: 'block w-full h-full' },
   templateUrl: './home.html',
   styleUrl: './home.css',

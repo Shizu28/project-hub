@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavBar } from '../nav-bar/nav-bar';
-import { ProfileIcon } from '../profile-icon/profile-icon';
+import { ProfileIcon } from '../../profile-icon/profile-icon';
 import { RouterLink } from '@angular/router';
 
 @Component({

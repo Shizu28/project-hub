@@ -1,6 +1,5 @@
-<form class="m-16 items-center justify-center flex">
-  <div>
-    <p>Detailansicht zum Projekt {{ title.value }}</p>
-  </div>
+<form class="my-16 mx-32">
   <app-text-input [control]="title" id="title" label="Titel" />
+  <app-text-input [control]="startedAt" id="startedAt" label="Startdatum" />
+  <app-text-input [control]="finishedAt" id="finishedAt" label="Enddatum" />
 </form>

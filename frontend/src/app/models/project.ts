@@ -1,8 +1,8 @@
 export interface Project {
   title: string;
   id: number;
-  started_at: Date;
-  finished_at?: Date;
+  startedAt: string;
+  finishedAt?: string;
   status: ProjectStatus;
   techStack: string[];
 }

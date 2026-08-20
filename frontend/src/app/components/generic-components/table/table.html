@@ -1,6 +1,6 @@
 <div class="overflow-hidden rounded-2xl border-2 border-gray-500 shadow-sm">
   <table class="w-full table-fixed">
-    <thead class="bg-gray-100 border-b-2 border-gray-500">
+    <thead class="bg-gray-100 border-b-2 h-16 border-gray-500">
       <tr>
         @for (header of headers(); track $index) {
           <th class="w-24 text-left p-2 border-r border-gray-300">{{ header }}</th>
@@ -11,7 +11,7 @@
       @for (row of rows(); track $index) {
         <tr
           (click)="onRowClickFn.emit($index)"
-          class="divide-x divide-gray-300 hover:bg-gray-200 cursor-pointer"
+          class="divide-x divide-gray-300 h-16 hover:bg-gray-200 cursor-pointer"
         >
           @for (cell of row; track $index) {
             <td class="text-left p-2">{{ cell }}</td>

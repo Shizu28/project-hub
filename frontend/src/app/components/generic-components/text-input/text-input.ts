@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { ReactiveFormsModule, FormControl } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-text-input',

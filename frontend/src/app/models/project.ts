@@ -11,7 +11,7 @@ export const ProjectStatus = {
   active: 'aktiv',
   completed: 'abgeschlossen',
   discarded: 'verworfen',
-  _: '-',
+  not_set: 'kein Status',
 } as const;
 
 export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus];

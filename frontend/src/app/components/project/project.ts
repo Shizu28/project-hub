@@ -5,15 +5,18 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextInput } from '../generic-components/text-input/text-input';
 import { ProjectService } from '../../services/ProjectService';
 import { ActivatedRoute } from '@angular/router';
+import { StatusTag } from '../generic-components/status-tag/status-tag';
+import { TagType } from '../generic-components/status-tag/status-tag';
 
 @Component({
   selector: 'app-project',
-  imports: [ReactiveFormsModule, FormsModule, TextInput],
+  imports: [ReactiveFormsModule, FormsModule, TextInput, StatusTag],
   templateUrl: './project.html',
   styleUrl: './project.css',
 })
 export class Project {
   project = signal<ProjectModel | undefined>(undefined);
+  protected readonly TagType = TagType;
 
   route = inject(ActivatedRoute);
   private projectService = inject(ProjectService);
@@ -24,12 +27,12 @@ export class Project {
       this.project.set(project);
       this.title.setValue(project.title);
       this.startedAt.setValue(project.startedAt);
-      this.finishedAt.setValue(project.finishedAt);
+      this.finishedAt.setValue(project.finishedAt ?? '-');
     });
   }
   title = new FormControl<string>('', { nonNullable: true });
   techStack = new FormControl<string[]>([], { nonNullable: true });
-  status = new FormControl<ProjectStatus>('-', { nonNullable: true });
+  status = new FormControl<ProjectStatus>('kein Status', { nonNullable: true });
   startedAt = new FormControl<string>('', { nonNullable: true });
   finishedAt = new FormControl<string>('', { nonNullable: true });
 

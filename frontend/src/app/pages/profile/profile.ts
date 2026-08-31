@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import GenericPage from '../../components/generic-components/generic-page/generic-page';
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [GenericPage],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })

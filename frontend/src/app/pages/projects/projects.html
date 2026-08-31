@@ -2,5 +2,15 @@
   pageTitle="Projektübersicht"
   pageDescription="Übersicht über die letzten begonnen, abgeschlossenen und verworfenen Projekte. Klicke auf ein Projekt für die Detailansicht oder das Bearbeiten des Projekts."
 >
-  <app-table (onRowClickFn)="onRowClick($event)" [headers]="headers" [rows]="rows()" />
+  <ng-template #statusCell let-value>
+    <app-project-status-tag [type]="tagFor(value)" label="{{ value }}" />
+  </ng-template>
+
+  <app-table
+    (onRowClickFn)="onRowClick($event)"
+    [headers]="headers"
+    [rows]="rows()"
+    [cellTemplate]="statusCell"
+    [templateColumn]="4"
+  />
 </app-generic-page>

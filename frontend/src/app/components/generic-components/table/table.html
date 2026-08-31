@@ -1,20 +1,36 @@
 <div class="overflow-hidden rounded-2xl border-2 border-gray-500 shadow-sm">
   <table class="w-full table-fixed">
-    <thead class="bg-gray-100 border-b-2 h-16 border-gray-500">
+    <thead class="bg-gray-100 h-16">
       <tr>
         @for (header of headers(); track $index) {
-          <th class="w-24 text-left p-2 border-r border-gray-300">{{ header }}</th>
+          <th
+            class="w-24 text-left p-2 border-r border-gray-300 cursor-pointer select-none"
+            (click)="sortBy($index)"
+          >
+            {{ header }}
+            @if (sortColumn() === $index) {
+              <span>{{ sortDirection() === 'asc' ? '&utrif;' : '&dtrif;' }}</span>
+            } @else {
+              <span class="sortingIcon" style="letter-spacing: -0.35em">&utrif;&dtrif;</span>
+            }
+          </th>
         }
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-300">
-      @for (row of rows(); track $index) {
+    <tbody>
+      @for (entry of sortedRows(); track entry.originalIndex) {
         <tr
-          (click)="onRowClickFn.emit($index)"
+          (click)="onRowClickFn.emit(entry.originalIndex)"
           class="divide-x divide-gray-300 h-16 hover:bg-gray-200 cursor-pointer"
         >
-          @for (cell of row; track $index) {
-            <td class="text-left p-2">{{ cell }}</td>
+          @for (cell of entry.row; track $index) {
+            <td class="text-left p-2">
+              @if ($index === templateColumn() && cellTemplate(); as tpl) {
+                <ng-container *ngTemplateOutlet="tpl; context: { $implicit: cell }" />
+              } @else {
+                {{ cell }}
+              }
+            </td>
           }
         </tr>
       }

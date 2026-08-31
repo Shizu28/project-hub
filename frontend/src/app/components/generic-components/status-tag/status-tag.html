@@ -1,0 +1,26 @@
+<div
+  class="flex items-center rounded-lg justify-center border-2 px-2 py-1 !text-align !text-center gap-2"
+  [class]="styles().classes"
+>
+  @switch (type()) {
+    @case (TagType.progress) {
+      <svg data-p-icon="spinner-dotted" class="animate-spin" [size]="14"></svg>
+    }
+    @case (TagType.warning) {
+      <svg data-p-icon="exclamation-circle" [size]="14"></svg>
+    }
+    @case (TagType.info) {
+      <svg data-p-icon="info-circle" [size]="14"></svg>
+    }
+    @case (TagType.error) {
+      <svg data-p-icon="times-circle" [size]="14"></svg>
+    }
+    @case (TagType.success) {
+      <svg data-p-icon="check-circle" [size]="14"></svg>
+    }
+    @default {
+      <svg data-p-icon="minus-circle" [size]="14"></svg>
+    }
+  }
+  <label>{{ label() }}</label>
+</div>

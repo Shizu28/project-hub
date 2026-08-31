@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import GenericPage from '../../components/generic-components/generic-page/generic-page';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [GenericPage],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })

@@ -1,9 +1,9 @@
-<div class="w-full h-full flex-row flex gap-16 items-center">
-  <label [for]="id()" class="font-bold"> {{ label() }}: </label>
+<div class="w-full h-full flex-row flex gap-16 justify-center items-center">
+  <label [for]="id()" class="font-bold w-24 text-left"> {{ label() }}: </label>
   <input
     [formControl]="control()"
     [id]="id()"
-    class="px-2 py-1 border border-gray-300 rounded-sm field-sizing-content min-w-24 max-w-full"
+    class="px-2 py-1 border border-gray-300 rounded-sm text-center m-1 field-sizing-content w-full"
     type="text"
   />
 </div>

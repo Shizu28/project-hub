@@ -1,5 +1,7 @@
 <form class="my-16 mx-32">
-  <app-text-input [control]="title" id="title" label="Titel" />
-  <app-text-input [control]="startedAt" id="startedAt" label="Startdatum" />
-  <app-text-input [control]="finishedAt" id="finishedAt" label="Enddatum" />
+  <app-text-input class="w-42!" [control]="title" id="title" label="Titel" />
+  <div class="flex flex-row gap-4 items-center w-full">
+    <app-text-input [control]="startedAt" id="startedAt" label="Startdatum" />
+    <app-text-input [control]="finishedAt" id="finishedAt" label="Enddatum" />
+  </div>
 </form>

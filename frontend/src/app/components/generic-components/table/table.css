@@ -1,0 +1,11 @@
+/* Trennlinien als box-shadow statt border: Schatten beeinflussen das Layout nicht,
+   dadurch bleibt jede Zeilenhöhe exakt gleich, egal an welcher Position die Zeile
+   nach dem Sortieren steht (Borders werden bei krummem Display-Scaling sonst
+   positionsabhängig auf Device-Pixel gerundet). */
+thead {
+  box-shadow: inset 0 -2px 0 var(--color-gray-500);
+}
+
+tbody tr:not(:first-child) td {
+  box-shadow: inset 0 1px 0 var(--color-gray-300);
+}
